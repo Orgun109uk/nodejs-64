@@ -47,7 +47,7 @@ apt-get -y install mongodb-org
 echo "Installing mongo-express..."
 npm install -g mongo-express
 
-cp /usr/local/nvm/versions/node/v0.12.2/lib/node_modules/mongo-express/config.default.js /usr/local/nvm/versions/node/${NODE_VERSION}/lib/node_modules/mongo-express/config.js
+cp /usr/local/nvm/versions/node/${NODE_VERSION}/lib/node_modules/mongo-express/config.default.js /usr/local/nvm/versions/node/${NODE_VERSION}/lib/node_modules/mongo-express/config.js
 sed -i.bak 's|^  useBasicAuth: true,|  useBasicAuth: false,|' /usr/local/nvm/versions/node/${NODE_VERSION}/lib/node_modules/mongo-express/config.js
 
 touch /home/vagrant/startups/mongo-express
@@ -56,7 +56,7 @@ chmod +x /home/vagrant/startups/mongo-express
 echo "#!/bin/bash -e" >> /home/vagrant/startups/mongo-express
 echo "" >> /home/vagrant/startups/mongo-express
 echo "echo \"Starting Mongo Express...\"" >> /home/vagrant/startups/mongo-express
-echo "cd /usr/local/nvm/versions/node/v0.12.2/lib/node_modules/mongo-express" >> /home/vagrant/startups/mongo-express
+echo "cd /usr/local/nvm/versions/node/${NODE_VERSION}/node_modules/mongo-express" >> /home/vagrant/startups/mongo-express
 echo "nohup node app.js &>/dev/null &" >> /home/vagrant/startups/mongo-express
 echo "" >> /home/vagrant/startups/mongo-express
 
