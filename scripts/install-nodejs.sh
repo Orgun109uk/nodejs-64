@@ -56,7 +56,7 @@ chmod +x /home/vagrant/startups/mongo-express
 echo "#!/bin/bash -e" >> /home/vagrant/startups/mongo-express
 echo "" >> /home/vagrant/startups/mongo-express
 echo "echo \"Starting Mongo Express...\"" >> /home/vagrant/startups/mongo-express
-echo "cd /usr/local/nvm/versions/node/${NODE_VERSION}/node_modules/mongo-express" >> /home/vagrant/startups/mongo-express
+echo "cd /usr/local/nvm/versions/node/${NODE_VERSION}/lib/node_modules/mongo-express" >> /home/vagrant/startups/mongo-express
 echo "nohup node app.js &>/dev/null &" >> /home/vagrant/startups/mongo-express
 echo "" >> /home/vagrant/startups/mongo-express
 
