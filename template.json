@@ -24,6 +24,7 @@
       "scripts/virtualbox.sh",
       "scripts/install-base.sh",
       "scripts/install-nodejs.sh",
+      "scripts/install-mongo.sh",
       "scripts/install-c9.sh",
       "scripts/install-samba.sh",
       "scripts/cleanup.sh",
