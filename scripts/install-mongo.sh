@@ -1,6 +1,10 @@
 #!/bin/bash -e
 
+export NVM_DIR="/usr/local/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+
 nvm use default
+NODE_VERSION=$(node --version)
 
 #################################################
 # Install MongoDB
@@ -10,12 +14,16 @@ echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | 
 apt-get update
 apt-get -y install mongodb-org
 
-mkdir /data/db
+mkdir /data/db -p
+ln 
+
+touch /home/vagrant/startups/mongodb
+chmod +x /home/vagrant/startups/mongodb
 
 echo "#!/bin/bash -e" >> /home/vagrant/startups/mongodb
 echo "" >> /home/vagrant/startups/mongodb
 echo "echo \"Starting MongoDB...\"" >> /home/vagrant/startups/mongodb
-echo "mongod --fork --logpath /var/log/mongodb.log" >> /home/vagrant/startups/mongodb
+echo "sudo mongod --fork --logpath /var/log/mongodb.log" >> /home/vagrant/startups/mongodb
 echo "" >> /home/vagrant/startups/mongodb
 
 #################################################
