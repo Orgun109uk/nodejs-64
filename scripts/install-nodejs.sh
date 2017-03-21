@@ -3,7 +3,7 @@
 #################################################
 # Install Node.js
 echo "Installing NodeJS and NPM..."
-curl https://raw.githubusercontent.com/creationix/nvm/v0.25.0/install.sh | NVM_DIR=/usr/local/nvm bash
+curl https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | NVM_DIR=/usr/local/nvm bash
 
 export NVM_DIR="/usr/local/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
@@ -18,8 +18,8 @@ echo "export NVM_DIR=\"${NVM_DIR}\"" >> /home/vagrant/.bashrc
 echo "[ -s \"\$NVM_DIR/nvm.sh\" ] && . \"\$NVM_DIR/nvm.sh\"" >> /home/vagrant/.bashrc
 echo "" >> /home/vagrant/.bashrc
 
-nvm install 0.12
-nvm alias default 0.12
+nvm install 6.10
+nvm alias default 6.10
 
 echo "nvm use default" >> /root/.bashrc
 echo "" >> /root/.bashrc
@@ -30,9 +30,9 @@ echo "" >> /home/vagrant/.bashrc
 NODE_VERSION=$(node --version)
 
 #################################################
-# Install Grunt CLI
-echo "Installing Grunt CLI..."
-npm install -g grunt-cli
+# Install Grunt and Gulp CLI
+echo "Installing Grunt and Gulp CLI..."
+npm install -g grunt-cli gulp-cli
 
 #################################################
 # Install MailDev
