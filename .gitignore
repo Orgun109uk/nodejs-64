@@ -3,3 +3,5 @@
 /packer_cache
 /data/*.box
 /workspace
+
+/build.sh
